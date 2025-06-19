@@ -2,113 +2,166 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { useState } from 'react'
 import { ColorPicker } from './ColorPicker'
 
-const meta: Meta<typeof ColorPicker> = {
-  title: 'UI/ColorPicker',
+const meta = {
+  title: 'Design System/Atoms/ColorPicker',
   component: ColorPicker,
   parameters: {
     layout: 'centered',
+    status: 'ready',
+    docs: {
+      description: {
+        component: `
+A color picker component that allows users to select colors through a visual interface.
+It provides both predefined color options and a custom color picker with RGB and hex input support.
+
+## Accessibility
+- Supports keyboard navigation
+- Color values are displayed as hex codes for screen readers
+- High contrast indicators for selected state
+
+## Usage
+\`\`\`tsx
+import { ColorPicker } from "@/components/ui/ColorPicker"
+
+function App() {
+  const [color, setColor] = useState("#4F46E5")
+  return <ColorPicker value={color} onChange={setColor} />
+}
+\`\`\`
+        `
+      }
+    }
   },
   tags: ['autodocs'],
   argTypes: {
-    disabled: {
-      control: { type: 'boolean' },
+    value: {
+      control: 'color',
+      description: 'The current color value in hex format',
     },
-    placeholder: {
-      control: { type: 'text' },
+    onChange: {
+      description: 'Callback function when the color changes',
     },
+    defaultExpanded: {
+      control: 'boolean',
+      description: 'Whether the color picker should be expanded by default',
+    },
+    className: {
+      control: 'text',
+      description: 'Additional CSS classes to apply to the component',
+    }
   },
-}
+  decorators: [
+    (Story) => (
+      <div className="w-[400px] p-6 bg-background">
+        <Story />
+      </div>
+    ),
+  ],
+} satisfies Meta<typeof ColorPicker>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
+/**
+ * The default state of the ColorPicker shows a collapsed view with the current color.
+ */
 export const Default: Story = {
-  render: () => {
-    const [color, setColor] = useState('#3b82f6')
-    return (
-      <div className="space-y-4">
-        <ColorPicker
-          value={color}
-          onChange={setColor}
-          placeholder="Choose a color"
-        />
-        <div className="text-sm text-muted-foreground font-sans">
-          Selected color: {color}
-        </div>
-      </div>
-    )
-  },
-}
-
-export const WithInitialValue: Story = {
-  render: () => {
-    const [color, setColor] = useState('#ef4444')
-    return (
-      <div className="space-y-4">
-        <ColorPicker
-          value={color}
-          onChange={setColor}
-        />
-        <div className="text-sm text-muted-foreground font-sans">
-          Selected color: {color}
-        </div>
-      </div>
-    )
-  },
-}
-
-export const Disabled: Story = {
   args: {
-    disabled: true,
-    value: '#10b981',
+    value: "#4F46E5",
+    onChange: () => {},
   },
-  render: (args) => (
-    <ColorPicker {...args} />
-  ),
-}
-
-export const CustomPlaceholder: Story = {
-  render: () => {
-    const [color, setColor] = useState('')
+  render: (args) => {
+    const [color, setColor] = useState(args.value)
     return (
-      <div className="space-y-4">
-        <ColorPicker
-          value={color}
-          onChange={setColor}
-          placeholder="Select your favorite color"
-        />
-        <div className="text-sm text-muted-foreground font-sans">
-          {color ? `Selected: ${color}` : 'No color selected'}
-        </div>
-      </div>
+      <ColorPicker
+        {...args}
+        value={color}
+        onChange={setColor}
+      />
     )
   },
 }
 
-export const Multiple: Story = {
+/**
+ * The expanded state shows all color selection options including quick colors and the custom color picker.
+ */
+export const Expanded: Story = {
+  args: {
+    value: "#ec4899",
+    onChange: () => {},
+    defaultExpanded: true,
+  },
+  render: (args) => {
+    const [color, setColor] = useState(args.value)
+    return (
+      <ColorPicker
+        {...args}
+        value={color}
+        onChange={setColor}
+      />
+    )
+  },
+}
+
+/**
+ * A playground for testing different props and configurations.
+ */
+export const Playground: Story = {
+  args: {
+    value: '#4F46E5',
+    onChange: () => {},
+    defaultExpanded: false,
+  },
+  render: (args) => {
+    const [color, setColor] = useState(args.value)
+    return (
+      <ColorPicker
+        {...args}
+        value={color}
+        onChange={setColor}
+      />
+    )
+  },
+}
+
+/**
+ * Example of using the ColorPicker in a theme customization scenario.
+ */
+export const ThemeCustomization: Story = {
+  args: {
+    value: "#4F46E5",
+    onChange: () => {},
+  },
   render: () => {
-    const [colors, setColors] = useState(['#3b82f6', '#ef4444', '#10b981', '#f59e0b'])
-    
-    const updateColor = (index: number, newColor: string) => {
-      const newColors = [...colors]
-      newColors[index] = newColor
-      setColors(newColors)
-    }
+    const [primaryColor, setPrimaryColor] = useState("#4F46E5")
+    const [accentColor, setAccentColor] = useState("#ec4899")
     
     return (
-      <div className="space-y-4">
-        <div className="grid grid-cols-2 gap-4">
-          {colors.map((color, index) => (
-            <div key={index} className="space-y-2">
-              <ColorPicker
-                value={color}
-                onChange={(newColor) => updateColor(index, newColor)}
-              />
-              <div className="text-xs text-muted-foreground font-sans">
-                Color {index + 1}: {color}
-              </div>
-            </div>
-          ))}
+      <div className="space-y-6">
+        <ColorPicker
+          value={primaryColor}
+          onChange={setPrimaryColor}
+        />
+        <ColorPicker
+          value={accentColor}
+          onChange={setAccentColor}
+        />
+        <div className="p-4 rounded-lg border border-border space-y-4">
+          <h3 className="font-medium">Preview</h3>
+          <div className="space-x-2">
+            <button 
+              className="px-4 py-2 rounded-md text-white transition-colors"
+              style={{ backgroundColor: primaryColor }}
+            >
+              Primary Button
+            </button>
+            <button 
+              className="px-4 py-2 rounded-md text-white transition-colors"
+              style={{ backgroundColor: accentColor }}
+            >
+              Accent Button
+            </button>
+          </div>
         </div>
       </div>
     )

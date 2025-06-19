@@ -1,14 +1,29 @@
-import type { Preview } from '@storybook/nextjs-vite'
+import type { Preview } from '@storybook/react'
+import { DocsPage } from '@storybook/blocks'
 import '../src/styles/theme.css'
 import '../src/app/globals.css'
 import React from 'react'
 
 const preview: Preview = {
   parameters: {
+    actions: { argTypesRegex: "^on[A-Z].*" },
     controls: {
       matchers: {
        color: /(background|color)$/i,
        date: /Date$/i,
+      },
+    },
+    docs: {
+      page: DocsPage,
+    },
+    options: {
+      storySort: {
+        order: [
+          'Documentation',
+          ['Introduction', 'Getting Started', 'Design Tokens', 'Contributing', 'Changelog'],
+          'Design System',
+          ['Atoms', 'Blocks', 'Pages'],
+        ],
       },
     },
 

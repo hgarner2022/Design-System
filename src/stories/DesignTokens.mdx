@@ -1,0 +1,202 @@
+import { Meta, ColorPalette, ColorItem, Title, Subtitle, Typeset } from '@storybook/blocks'
+import tokens from '../../tokens/tokens.json'
+
+<Meta title="Documentation/Design Tokens" />
+
+# Design Tokens
+
+Our design tokens are the building blocks of our design system. They help maintain consistency across our products while making it easier to update global styles.
+
+## Colors
+
+### Brand Colors
+
+<ColorPalette>
+  <ColorItem 
+    title="Primary" 
+    subtitle="Brand primary color"
+    colors={{ 
+      base: tokens.colors.primary,
+      light: tokens.colors.primaryLight,
+      dark: tokens.colors.primaryDark,
+    }} 
+  />
+  <ColorItem 
+    title="Secondary" 
+    subtitle="Brand secondary color"
+    colors={{ 
+      base: tokens.colors.secondary,
+      light: tokens.colors.secondaryLight,
+      dark: tokens.colors.secondaryDark,
+    }} 
+  />
+</ColorPalette>
+
+### Semantic Colors
+
+<ColorPalette>
+  <ColorItem 
+    title="Success" 
+    subtitle="For positive actions and states"
+    colors={{ 
+      base: tokens.colors.success,
+      light: tokens.colors.successLight,
+      dark: tokens.colors.successDark,
+    }} 
+  />
+  <ColorItem 
+    title="Warning" 
+    subtitle="For cautionary messages"
+    colors={{ 
+      base: tokens.colors.warning,
+      light: tokens.colors.warningLight,
+      dark: tokens.colors.warningDark,
+    }} 
+  />
+  <ColorItem 
+    title="Error" 
+    subtitle="For error states"
+    colors={{ 
+      base: tokens.colors.error,
+      light: tokens.colors.errorLight,
+      dark: tokens.colors.errorDark,
+    }} 
+  />
+</ColorPalette>
+
+### Neutral Colors
+
+<ColorPalette>
+  <ColorItem 
+    title="Gray" 
+    subtitle="For text and borders"
+    colors={{ 
+      50: tokens.colors.gray[50],
+      100: tokens.colors.gray[100],
+      200: tokens.colors.gray[200],
+      300: tokens.colors.gray[300],
+      400: tokens.colors.gray[400],
+      500: tokens.colors.gray[500],
+      600: tokens.colors.gray[600],
+      700: tokens.colors.gray[700],
+      800: tokens.colors.gray[800],
+      900: tokens.colors.gray[900],
+    }} 
+  />
+</ColorPalette>
+
+## Typography
+
+### Font Families
+
+```css
+/* Primary Font */
+font-family: ${tokens.fonts.primary};
+
+/* Monospace Font */
+font-family: ${tokens.fonts.mono};
+```
+
+### Font Sizes
+
+<Typeset 
+  fontSizes={[
+    tokens.fontSizes.xs,
+    tokens.fontSizes.sm,
+    tokens.fontSizes.base,
+    tokens.fontSizes.lg,
+    tokens.fontSizes.xl,
+    tokens.fontSizes['2xl'],
+    tokens.fontSizes['3xl'],
+  ]}
+  sampleText="The quick brown fox jumps over the lazy dog"
+  fontFamily={tokens.fonts.primary}
+/>
+
+### Font Weights
+
+- Light: ${tokens.fontWeights.light}
+- Regular: ${tokens.fontWeights.regular}
+- Medium: ${tokens.fontWeights.medium}
+- Semibold: ${tokens.fontWeights.semibold}
+- Bold: ${tokens.fontWeights.bold}
+
+## Spacing
+
+Our spacing scale is based on a 4px grid system:
+
+```css
+/* Available spacing values */
+space-0: ${tokens.spacing[0]}    /* 0px */
+space-1: ${tokens.spacing[1]}    /* 4px */
+space-2: ${tokens.spacing[2]}    /* 8px */
+space-3: ${tokens.spacing[3]}    /* 12px */
+space-4: ${tokens.spacing[4]}    /* 16px */
+space-5: ${tokens.spacing[5]}    /* 20px */
+space-6: ${tokens.spacing[6]}    /* 24px */
+space-8: ${tokens.spacing[8]}    /* 32px */
+space-10: ${tokens.spacing[10]}  /* 40px */
+space-12: ${tokens.spacing[12]}  /* 48px */
+space-16: ${tokens.spacing[16]}  /* 64px */
+```
+
+## Border Radius
+
+```css
+/* Available border radius values */
+radius-none: ${tokens.borderRadius.none}     /* 0px */
+radius-sm: ${tokens.borderRadius.sm}         /* 2px */
+radius-base: ${tokens.borderRadius.base}     /* 4px */
+radius-md: ${tokens.borderRadius.md}         /* 6px */
+radius-lg: ${tokens.borderRadius.lg}         /* 8px */
+radius-xl: ${tokens.borderRadius.xl}         /* 12px */
+radius-2xl: ${tokens.borderRadius['2xl']}    /* 16px */
+radius-full: ${tokens.borderRadius.full}     /* 9999px */
+```
+
+## Shadows
+
+```css
+/* Available shadow values */
+shadow-sm: ${tokens.shadows.sm}
+shadow-base: ${tokens.shadows.base}
+shadow-md: ${tokens.shadows.md}
+shadow-lg: ${tokens.shadows.lg}
+shadow-xl: ${tokens.shadows.xl}
+shadow-2xl: ${tokens.shadows['2xl']}
+shadow-inner: ${tokens.shadows.inner}
+```
+
+## Usage
+
+You can use these tokens in your CSS through our custom properties:
+
+```css
+.my-component {
+  color: var(--color-primary);
+  font-size: var(--font-size-base);
+  padding: var(--spacing-4);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+}
+```
+
+Or in your components using our theme utilities:
+
+```tsx
+import { theme } from '@company/design-system'
+
+function MyComponent() {
+  return (
+    <div
+      style={{
+        color: theme.colors.primary,
+        fontSize: theme.fontSizes.base,
+        padding: theme.spacing[4],
+      }}
+    >
+      Content
+    </div>
+  )
+}
+``` 
