@@ -145,6 +145,10 @@
       "resizable": {
         "path": "src/components/ui/resizable.tsx",
         "type": "base"
+      },
+      "color-picker": {
+        "path": "src/components/ui/ColorPicker.tsx",
+        "type": "base"
       }
     },
     "pro-blocks": {

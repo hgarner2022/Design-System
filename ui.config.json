@@ -23,6 +23,7 @@
     "Hero",
     "LandingPage",
     "Button",
+    "ColorPicker",
     "Input",
     "accordion",
     "alert-dialog",
