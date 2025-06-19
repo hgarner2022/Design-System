@@ -24,7 +24,7 @@ It provides both predefined color options and a custom color picker with RGB and
 import { ColorPicker } from "@/components/ui/ColorPicker"
 
 function App() {
-  const [color, setColor] = useState("#4F46E5")
+  const [color, setColor] = useState("#9333EA")
   return <ColorPicker value={color} onChange={setColor} />
 }
 \`\`\`
@@ -67,7 +67,7 @@ type Story = StoryObj<typeof meta>
  */
 export const Default: Story = {
   args: {
-    value: "#4F46E5",
+    value: "#9333EA",
     onChange: () => {},
   },
   render: (args) => {
@@ -87,7 +87,7 @@ export const Default: Story = {
  */
 export const Expanded: Story = {
   args: {
-    value: "#ec4899",
+    value: "#EC4899",
     onChange: () => {},
     defaultExpanded: true,
   },
@@ -108,7 +108,7 @@ export const Expanded: Story = {
  */
 export const Playground: Story = {
   args: {
-    value: '#4F46E5',
+    value: '#9333EA',
     onChange: () => {},
     defaultExpanded: false,
   },
@@ -129,12 +129,12 @@ export const Playground: Story = {
  */
 export const ThemeCustomization: Story = {
   args: {
-    value: "#4F46E5",
+    value: "#9333EA",
     onChange: () => {},
   },
   render: () => {
-    const [primaryColor, setPrimaryColor] = useState("#4F46E5")
-    const [accentColor, setAccentColor] = useState("#ec4899")
+    const [primaryColor, setPrimaryColor] = useState("#9333EA")
+    const [accentColor, setAccentColor] = useState("#EC4899")
     
     return (
       <div className="space-y-6">

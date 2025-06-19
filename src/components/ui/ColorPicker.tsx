@@ -14,9 +14,15 @@ interface ColorPickerProps {
   defaultExpanded?: boolean
 }
 
-const PREDEFINED_COLORS = [
-  "#ef4444", "#f97316", "#eab308", "#22c55e",
-  "#06b6d4", "#3b82f6", "#8b5cf6", "#ec4899"
+const quickColors = [
+  '#9333EA', // Updated primary color
+  '#EC4899',
+  '#F59E0B',
+  '#EF4444',
+  '#3B82F6',
+  '#10B981',
+  '#6B7280',
+  '#000000'
 ]
 
 export function ColorPicker({ value, onChange, className = "", defaultExpanded = false }: ColorPickerProps) {
@@ -189,7 +195,7 @@ export function ColorPicker({ value, onChange, className = "", defaultExpanded =
           <div>
             <Label className="text-sm mb-3 block font-medium">Quick Colors</Label>
             <div className="grid grid-cols-4 sm:grid-cols-8 gap-2">
-              {PREDEFINED_COLORS.map((color) => (
+              {quickColors.map((color) => (
                 <button
                   key={color}
                   className={`aspect-square w-full rounded-lg border shadow-sm transition-all hover:scale-105 ${
