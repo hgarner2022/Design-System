@@ -9,57 +9,23 @@ Our design tokens are the building blocks of our design system. They help mainta
 
 ## Colors
 
-### Brand Colors
+### Primary Colors
 
 <ColorPalette>
   <ColorItem 
     title="Primary" 
-    subtitle="Brand primary color"
+    subtitle="Brand primary color palette"
     colors={{ 
-      base: tokens.colors.primary,
-      light: tokens.colors.primaryLight,
-      dark: tokens.colors.primaryDark,
-    }} 
-  />
-  <ColorItem 
-    title="Secondary" 
-    subtitle="Brand secondary color"
-    colors={{ 
-      base: tokens.colors.secondary,
-      light: tokens.colors.secondaryLight,
-      dark: tokens.colors.secondaryDark,
-    }} 
-  />
-</ColorPalette>
-
-### Semantic Colors
-
-<ColorPalette>
-  <ColorItem 
-    title="Success" 
-    subtitle="For positive actions and states"
-    colors={{ 
-      base: tokens.colors.success,
-      light: tokens.colors.successLight,
-      dark: tokens.colors.successDark,
-    }} 
-  />
-  <ColorItem 
-    title="Warning" 
-    subtitle="For cautionary messages"
-    colors={{ 
-      base: tokens.colors.warning,
-      light: tokens.colors.warningLight,
-      dark: tokens.colors.warningDark,
-    }} 
-  />
-  <ColorItem 
-    title="Error" 
-    subtitle="For error states"
-    colors={{ 
-      base: tokens.colors.error,
-      light: tokens.colors.errorLight,
-      dark: tokens.colors.errorDark,
+      50: tokens.light.color.primary['50'].$value,
+      100: tokens.light.color.primary['100'].$value,
+      200: tokens.light.color.primary['200'].$value,
+      300: tokens.light.color.primary['300'].$value,
+      400: tokens.light.color.primary['400'].$value,
+      500: tokens.light.color.primary['500'].$value,
+      600: tokens.light.color.primary['600'].$value,
+      700: tokens.light.color.primary['700'].$value,
+      800: tokens.light.color.primary['800'].$value,
+      900: tokens.light.color.primary['900'].$value,
     }} 
   />
 </ColorPalette>
@@ -68,19 +34,43 @@ Our design tokens are the building blocks of our design system. They help mainta
 
 <ColorPalette>
   <ColorItem 
-    title="Gray" 
-    subtitle="For text and borders"
+    title="Neutral" 
+    subtitle="For text, borders, and backgrounds"
     colors={{ 
-      50: tokens.colors.gray[50],
-      100: tokens.colors.gray[100],
-      200: tokens.colors.gray[200],
-      300: tokens.colors.gray[300],
-      400: tokens.colors.gray[400],
-      500: tokens.colors.gray[500],
-      600: tokens.colors.gray[600],
-      700: tokens.colors.gray[700],
-      800: tokens.colors.gray[800],
-      900: tokens.colors.gray[900],
+      0: tokens.light.color.neutral['0'].$value,
+      50: tokens.light.color.neutral['50'].$value,
+      100: tokens.light.color.neutral['100'].$value,
+      200: tokens.light.color.neutral['200'].$value,
+      300: tokens.light.color.neutral['300'].$value,
+      400: tokens.light.color.neutral['400'].$value,
+      500: tokens.light.color.neutral['500'].$value,
+      600: tokens.light.color.neutral['600'].$value,
+      700: tokens.light.color.neutral['700'].$value,
+      800: tokens.light.color.neutral['800'].$value,
+      900: tokens.light.color.neutral['900'].$value,
+    }} 
+  />
+</ColorPalette>
+
+### Semantic Colors
+
+<ColorPalette>
+  <ColorItem 
+    title="Brand" 
+    subtitle="Primary brand color"
+    colors={{ 
+      brand: tokens.light.color.brand.$value,
+      'brand-hover': tokens.light.color['brand-hover'].$value,
+    }} 
+  />
+  <ColorItem 
+    title="Surface" 
+    subtitle="Background and surface colors"
+    colors={{ 
+      surface: tokens.light.color.surface.$value,
+      'surface-inverse': tokens.light.color['surface-inverse'].$value,
+      'on-surface': tokens.light.color['on-surface'].$value,
+      'on-surface-inverse': tokens.light.color['on-surface-inverse'].$value,
     }} 
   />
 </ColorPalette>
@@ -90,36 +80,32 @@ Our design tokens are the building blocks of our design system. They help mainta
 ### Font Families
 
 ```css
-/* Primary Font */
-font-family: ${tokens.fonts.primary};
+/* Body Font */
+font-family: ${tokens.light.font.family.body.$value};
 
-/* Monospace Font */
-font-family: ${tokens.fonts.mono};
+/* Heading Font */
+font-family: ${tokens.light.font.family.heading.$value};
 ```
 
 ### Font Sizes
 
 <Typeset 
   fontSizes={[
-    tokens.fontSizes.xs,
-    tokens.fontSizes.sm,
-    tokens.fontSizes.base,
-    tokens.fontSizes.lg,
-    tokens.fontSizes.xl,
-    tokens.fontSizes['2xl'],
-    tokens.fontSizes['3xl'],
+    tokens.light.font.size.xs.$value + 'px',
+    tokens.light.font.size.sm.$value + 'px',
+    tokens.light.font.size.md.$value + 'px',
+    tokens.light.font.size.lg.$value + 'px',
+    tokens.light.font.size.xl.$value + 'px',
   ]}
   sampleText="The quick brown fox jumps over the lazy dog"
-  fontFamily={tokens.fonts.primary}
+  fontFamily={tokens.light.font.family.body.$value}
 />
 
 ### Font Weights
 
-- Light: ${tokens.fontWeights.light}
-- Regular: ${tokens.fontWeights.regular}
-- Medium: ${tokens.fontWeights.medium}
-- Semibold: ${tokens.fontWeights.semibold}
-- Bold: ${tokens.fontWeights.bold}
+- Regular: ${tokens.light.font.weight.regular.$value}
+- Medium: ${tokens.light.font.weight.medium.$value}
+- Bold: ${tokens.light.font.weight.bold.$value}
 
 ## Spacing
 
@@ -127,44 +113,37 @@ Our spacing scale is based on a 4px grid system:
 
 ```css
 /* Available spacing values */
-space-0: ${tokens.spacing[0]}    /* 0px */
-space-1: ${tokens.spacing[1]}    /* 4px */
-space-2: ${tokens.spacing[2]}    /* 8px */
-space-3: ${tokens.spacing[3]}    /* 12px */
-space-4: ${tokens.spacing[4]}    /* 16px */
-space-5: ${tokens.spacing[5]}    /* 20px */
-space-6: ${tokens.spacing[6]}    /* 24px */
-space-8: ${tokens.spacing[8]}    /* 32px */
-space-10: ${tokens.spacing[10]}  /* 40px */
-space-12: ${tokens.spacing[12]}  /* 48px */
-space-16: ${tokens.spacing[16]}  /* 64px */
+space-0: ${tokens.light.space['0'].$value}px    /* 0px */
+space-1: ${tokens.light.space['1'].$value}px    /* 4px */
+space-2: ${tokens.light.space['2'].$value}px    /* 8px */
+space-3: ${tokens.light.space['3'].$value}px    /* 12px */
+space-4: ${tokens.light.space['4'].$value}px    /* 16px */
+space-5: ${tokens.light.space['5'].$value}px    /* 20px */
 ```
 
 ## Border Radius
 
 ```css
 /* Available border radius values */
-radius-none: ${tokens.borderRadius.none}     /* 0px */
-radius-sm: ${tokens.borderRadius.sm}         /* 2px */
-radius-base: ${tokens.borderRadius.base}     /* 4px */
-radius-md: ${tokens.borderRadius.md}         /* 6px */
-radius-lg: ${tokens.borderRadius.lg}         /* 8px */
-radius-xl: ${tokens.borderRadius.xl}         /* 12px */
-radius-2xl: ${tokens.borderRadius['2xl']}    /* 16px */
-radius-full: ${tokens.borderRadius.full}     /* 9999px */
+radius-sm: ${tokens.light.radius.sm.$value}px   /* 4px */
+radius-md: ${tokens.light.radius.md.$value}px   /* 8px */
+radius-lg: ${tokens.light.radius.lg.$value}px   /* 12px */
 ```
 
-## Shadows
+## Dark Mode
+
+Our design system supports dark mode with specific color adjustments:
 
 ```css
-/* Available shadow values */
-shadow-sm: ${tokens.shadows.sm}
-shadow-base: ${tokens.shadows.base}
-shadow-md: ${tokens.shadows.md}
-shadow-lg: ${tokens.shadows.lg}
-shadow-xl: ${tokens.shadows.xl}
-shadow-2xl: ${tokens.shadows['2xl']}
-shadow-inner: ${tokens.shadows.inner}
+/* Dark mode brand colors */
+--color-brand: ${tokens.dark.color.brand.$value};
+--color-brand-hover: ${tokens.dark.color['brand-hover'].$value};
+
+/* Dark mode surface colors */
+--color-surface: ${tokens.dark.color.surface.$value};
+--color-surface-inverse: ${tokens.dark.color['surface-inverse'].$value};
+--color-on-surface: ${tokens.dark.color['on-surface'].$value};
+--color-on-surface-inverse: ${tokens.dark.color['on-surface-inverse'].$value};
 ```
 
 ## Usage
@@ -173,11 +152,11 @@ You can use these tokens in your CSS through our custom properties:
 
 ```css
 .my-component {
-  color: var(--color-primary);
-  font-size: var(--font-size-base);
-  padding: var(--spacing-4);
+  color: var(--color-primary-500);
+  font-size: var(--font-size-md);
+  padding: var(--space-4);
   border-radius: var(--radius-md);
-  box-shadow: var(--shadow-md);
+  background-color: var(--color-surface);
 }
 ```
 
@@ -190,13 +169,23 @@ function MyComponent() {
   return (
     <div
       style={{
-        color: theme.colors.primary,
-        fontSize: theme.fontSizes.base,
-        padding: theme.spacing[4],
+        color: theme.colors.primary[500],
+        fontSize: theme.fontSizes.md + 'px',
+        padding: theme.spacing[4] + 'px',
+        borderRadius: theme.radius.md + 'px',
       }}
     >
       Content
     </div>
   )
 }
-``` 
+```
+
+## Token Structure
+
+Our tokens follow the [Design Tokens Format](https://design-tokens.github.io/) specification:
+
+- **$type**: Defines the token type (color, dimension, fontFamily, etc.)
+- **$value**: Contains the actual value
+- **Nested structure**: Tokens are organized by category and subcategory
+- **Theme support**: Separate light and dark theme tokens 
