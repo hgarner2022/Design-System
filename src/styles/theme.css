@@ -1,0 +1,108 @@
+:root {
+  /* Design System Tokens */
+  --color-primary-50: #E1E0FB;
+  --color-primary-100: #D0CEF8;
+  --color-primary-200: #B7B3F4;
+  --color-primary-300: #908BEF;
+  --color-primary-400: #6A62E9;
+  --color-primary-500: #4F46E5;
+  --color-primary-600: #2F24E0;
+  --color-primary-700: #241ABC;
+  --color-primary-800: #1C1594;
+  --color-primary-900: #140F6B;
+  --color-neutral-0: #FFFFFF;
+  --color-neutral-50: #F8F9FA;
+  --color-neutral-100: #F1F3F5;
+  --color-neutral-200: #E9ECEF;
+  --color-neutral-300: #DEE2E6;
+  --color-neutral-400: #CED4DA;
+  --color-neutral-500: #ADB5BD;
+  --color-neutral-600: #868E96;
+  --color-neutral-700: #495057;
+  --color-neutral-800: #343A40;
+  --color-neutral-900: #212529;
+  --color-brand: var(--color-primary-500);
+  --color-brand-hover: var(--color-primary-600);
+  --color-surface: var(--color-neutral-0);
+  --color-surface-inverse: var(--color-neutral-900);
+  --color-on-surface: var(--color-neutral-900);
+  --color-on-surface-inverse: var(--color-neutral-0);
+  
+  /* Typography */
+  --font-family-body: "Plus Jakarta Sans", sans-serif;
+  --font-family-heading: "Petrona", serif;
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 20px;
+  --font-size-xl: 24px;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  
+  /* Spacing */
+  --space-0: 0;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+
+  /* Radius */
+  --radius: 0.625rem;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+
+  /* shadcn UI Variables - Light Mode */
+  --background: var(--color-neutral-0);
+  --foreground: var(--color-neutral-900);
+  --card: var(--color-neutral-0);
+  --card-foreground: var(--color-neutral-900);
+  --popover: var(--color-neutral-0);
+  --popover-foreground: var(--color-neutral-900);
+  --primary: var(--color-primary-500);
+  --primary-foreground: var(--color-neutral-0);
+  --secondary: var(--color-neutral-100);
+  --secondary-foreground: var(--color-primary-500);
+  --muted: var(--color-neutral-100);
+  --muted-foreground: var(--color-neutral-600);
+  --accent: var(--color-neutral-100);
+  --accent-foreground: var(--color-primary-500);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: var(--color-neutral-0);
+  --border: var(--color-neutral-200);
+  --input: var(--color-neutral-200);
+  --ring: var(--color-primary-500);
+}
+
+.dark {
+  /* Design System Dark Mode Tokens */
+  --color-brand: var(--color-primary-400);
+  --color-brand-hover: var(--color-primary-300);
+  --color-surface: var(--color-neutral-900);
+  --color-surface-inverse: var(--color-neutral-0);
+  --color-on-surface: var(--color-neutral-0);
+  --color-on-surface-inverse: var(--color-neutral-900);
+
+  /* shadcn UI Variables - Dark Mode */
+  --background: var(--color-neutral-900);
+  --foreground: var(--color-neutral-0);
+  --card: var(--color-neutral-800);
+  --card-foreground: var(--color-neutral-0);
+  --popover: var(--color-neutral-800);
+  --popover-foreground: var(--color-neutral-0);
+  --primary: var(--color-primary-400);
+  --primary-foreground: var(--color-neutral-900);
+  --secondary: var(--color-neutral-800);
+  --secondary-foreground: var(--color-neutral-0);
+  --muted: var(--color-neutral-800);
+  --muted-foreground: var(--color-neutral-400);
+  --accent: var(--color-neutral-800);
+  --accent-foreground: var(--color-neutral-0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --destructive-foreground: var(--color-neutral-0);
+  --border: var(--color-neutral-800);
+  --input: var(--color-neutral-800);
+  --ring: var(--color-primary-400);
+}

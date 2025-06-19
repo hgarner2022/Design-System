@@ -1,0 +1,24 @@
+{
+  "framework": "Next.js/React",
+  "builder": "Next.js",
+  "language": "TypeScript",
+  "styling": {
+    "framework": "Tailwind CSS v4",
+    "configPath": "./tailwind.config.js",
+    "globalCSS": "./src/app/globals.css"
+  },
+  "tokens": {
+    "source": "./tokens/tokens.json",
+    "output": "./src/styles/theme.css"
+  },
+  "fonts": {
+    "body": "Plus Jakarta Sans",
+    "headings": "Petrona"
+  },
+  "rsc": true,
+  "tsx": true,
+  "components": [
+    "Button",
+    "Input"
+  ]
+}
