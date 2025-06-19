@@ -37,7 +37,7 @@ npm run storybook
 
 Open [http://localhost:6006](http://localhost:6006) to explore the design system.
 
-## Live Storybook
+### Live Storybook
 
 View the live documentation at: https://hgarner2022.github.io/Design-System/
 
