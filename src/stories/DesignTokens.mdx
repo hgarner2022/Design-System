@@ -144,6 +144,77 @@ Our design tokens are the building blocks of our design system. They help mainta
   />
 </ColorPalette>
 
+#### Surface Color Usage
+
+Surface colors define the background and foreground colors for different contexts in our interface. They ensure proper contrast and accessibility across all components.
+
+**Surface Colors:**
+- **`surface`** - Primary background color for cards, panels, and main content areas
+- **`surface-inverse`** - Dark background for inverted contexts (like dark mode or highlighted sections)
+- **`on-surface`** - Text color that appears on light surfaces
+- **`on-surface-inverse`** - Text color that appears on dark surfaces
+
+**Usage Examples:**
+
+```css
+/* Card background */
+.card {
+  background-color: var(--surface);
+  color: var(--on-surface);
+}
+
+/* Dark mode or highlighted section */
+.highlighted {
+  background-color: var(--surface-inverse);
+  color: var(--on-surface-inverse);
+}
+
+/* Modal overlay */
+.modal-backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Tooltip */
+.tooltip {
+  background-color: var(--surface-inverse);
+  color: var(--on-surface-inverse);
+}
+```
+
+**Visual Examples:**
+
+<div style={{ 
+  display: 'grid', 
+  gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', 
+  gap: '1rem', 
+  marginTop: '1rem' 
+}}>
+  <div style={{ 
+    padding: '1rem', 
+    borderRadius: '8px', 
+    backgroundColor: tokens.light.color.neutral['0'].$value,
+    color: tokens.light.color.neutral['900'].$value,
+    border: `1px solid ${tokens.light.color.neutral['200'].$value}`
+  }}>
+    <h4 style={{ margin: '0 0 0.5rem 0' }}>Surface (Light)</h4>
+    <p style={{ margin: 0, fontSize: '0.875rem' }}>
+      This is how content appears on a light surface with dark text.
+    </p>
+  </div>
+  
+  <div style={{ 
+    padding: '1rem', 
+    borderRadius: '8px', 
+    backgroundColor: tokens.light.color.neutral['900'].$value,
+    color: tokens.light.color.neutral['0'].$value
+  }}>
+    <h4 style={{ margin: '0 0 0.5rem 0' }}>Surface Inverse (Dark)</h4>
+    <p style={{ margin: 0, fontSize: '0.875rem' }}>
+      This is how content appears on a dark surface with light text.
+    </p>
+  </div>
+</div>
+
 ## Typography
 
 ### Font Families
