@@ -128,18 +128,18 @@ Our design tokens are the building blocks of our design system. They help mainta
     title="Brand" 
     subtitle="Primary brand color"
     colors={{ 
-      brand: tokens.light.color.brand.$value,
-      'brand-hover': tokens.light.color['brand-hover'].$value,
+      brand: tokens.light.color.primary['500'].$value,
+      'brand-hover': tokens.light.color.primary['600'].$value,
     }} 
   />
   <ColorItem 
     title="Surface" 
     subtitle="Background and surface colors"
     colors={{ 
-      surface: tokens.light.color.surface.$value,
-      'surface-inverse': tokens.light.color['surface-inverse'].$value,
-      'on-surface': tokens.light.color['on-surface'].$value,
-      'on-surface-inverse': tokens.light.color['on-surface-inverse'].$value,
+      surface: tokens.light.color.neutral['0'].$value,
+      'surface-inverse': tokens.light.color.neutral['900'].$value,
+      'on-surface': tokens.light.color.neutral['900'].$value,
+      'on-surface-inverse': tokens.light.color.neutral['0'].$value,
     }} 
   />
 </ColorPalette>
