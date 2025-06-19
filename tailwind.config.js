@@ -82,7 +82,154 @@ module.exports = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            maxWidth: '65ch',
+            color: 'var(--foreground)',
+            '[class~="lead"]': {
+              color: 'var(--muted-foreground)',
+            },
+            a: {
+              color: 'var(--primary)',
+              textDecoration: 'underline',
+              fontWeight: '500',
+            },
+            strong: {
+              color: 'var(--foreground)',
+              fontWeight: '600',
+            },
+            'ol[type="A"]': {
+              '--list-counter-style': 'upper-alpha',
+            },
+            'ol[type="a"]': {
+              '--list-counter-style': 'lower-alpha',
+            },
+            'ol[type="A" s]': {
+              '--list-counter-style': 'upper-alpha',
+            },
+            'ol[type="a" s]': {
+              '--list-counter-style': 'lower-alpha',
+            },
+            'ol[type="I"]': {
+              '--list-counter-style': 'upper-roman',
+            },
+            'ol[type="i"]': {
+              '--list-counter-style': 'lower-roman',
+            },
+            'ol[type="I" s]': {
+              '--list-counter-style': 'upper-roman',
+            },
+            'ol[type="i" s]': {
+              '--list-counter-style': 'lower-roman',
+            },
+            'ol[type="1"]': {
+              '--list-counter-style': 'decimal',
+            },
+            'ol > li': {
+              position: 'relative',
+            },
+            'ol > li::before': {
+              content: 'counter(list-item, var(--list-counter-style, decimal)) "."',
+              position: 'absolute',
+              fontWeight: '400',
+              color: 'var(--muted-foreground)',
+            },
+            'ul > li': {
+              position: 'relative',
+            },
+            'ul > li::before': {
+              content: '""',
+              position: 'absolute',
+              borderRadius: '50%',
+              width: '0.375em',
+              height: '0.375em',
+              top: 'calc(0.875em - 0.1875em)',
+              left: '-1.25em',
+              backgroundColor: 'var(--muted-foreground)',
+            },
+            hr: {
+              borderColor: 'var(--border)',
+              borderTopWidth: 1,
+              marginTop: '3em',
+              marginBottom: '3em',
+            },
+            blockquote: {
+              fontWeight: '500',
+              fontStyle: 'italic',
+              color: 'var(--foreground)',
+              borderLeftWidth: '0.25rem',
+              borderLeftColor: 'var(--border)',
+              quotes: '"\\201C""\\201D""\\2018""\\2019"',
+              marginTop: '1.6em',
+              marginBottom: '1.6em',
+              paddingLeft: '1em',
+            },
+            h1: {
+              color: 'var(--foreground)',
+              fontWeight: '800',
+              fontFamily: 'var(--font-petrona)',
+            },
+            h2: {
+              color: 'var(--foreground)',
+              fontWeight: '700',
+              fontFamily: 'var(--font-petrona)',
+            },
+            h3: {
+              color: 'var(--foreground)',
+              fontWeight: '600',
+              fontFamily: 'var(--font-petrona)',
+            },
+            h4: {
+              color: 'var(--foreground)',
+              fontWeight: '600',
+              fontFamily: 'var(--font-petrona)',
+            },
+            'figure figcaption': {
+              color: 'var(--muted-foreground)',
+            },
+            code: {
+              color: 'var(--foreground)',
+              fontWeight: '600',
+            },
+            'code::before': {
+              content: '"`"',
+            },
+            'code::after': {
+              content: '"`"',
+            },
+            'a code': {
+              color: 'var(--foreground)',
+            },
+            pre: {
+              color: 'var(--foreground)',
+              backgroundColor: 'var(--muted)',
+              overflowX: 'auto',
+            },
+            'pre code': {
+              backgroundColor: 'transparent',
+              borderWidth: '0',
+              borderRadius: '0',
+              padding: '0',
+              fontWeight: '400',
+              color: 'inherit',
+              fontSize: 'inherit',
+              fontFamily: 'inherit',
+              lineHeight: 'inherit',
+            },
+            'pre code::before': {
+              content: 'none',
+            },
+            'pre code::after': {
+              content: 'none',
+            },
+          },
+        },
+      },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    require("@tailwindcss/typography"),
+  ],
 } 

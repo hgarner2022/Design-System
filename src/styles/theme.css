@@ -54,6 +54,25 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
 
+  /* Pro Blocks Gradients */
+  --gradient-primary: linear-gradient(135deg, var(--color-primary-400) 0%, var(--color-primary-600) 100%);
+  --gradient-secondary: linear-gradient(135deg, var(--color-neutral-100) 0%, var(--color-neutral-200) 100%);
+  --gradient-success: linear-gradient(135deg, #34D399 0%, #059669 100%);
+  --gradient-danger: linear-gradient(135deg, #FB7185 0%, #E11D48 100%);
+  --gradient-warning: linear-gradient(135deg, #FBBF24 0%, #D97706 100%);
+  --gradient-info: linear-gradient(135deg, #60A5FA 0%, #2563EB 100%);
+  --gradient-background: linear-gradient(135deg, var(--color-neutral-50) 0%, var(--color-neutral-100) 100%);
+
+  /* Pro Blocks Chart Colors */
+  --chart-1: #4F46E5;
+  --chart-2: #0EA5E9;
+  --chart-3: #10B981;
+  --chart-4: #F59E0B;
+  --chart-5: #EF4444;
+  --chart-6: #8B5CF6;
+  --chart-7: #EC4899;
+  --chart-8: #6366F1;
+
   /* shadcn UI Variables - Light Mode */
   --background: var(--color-neutral-0);
   --foreground: var(--color-neutral-900);
@@ -84,6 +103,11 @@
   --color-surface-inverse: var(--color-neutral-0);
   --color-on-surface: var(--color-neutral-0);
   --color-on-surface-inverse: var(--color-neutral-900);
+
+  /* Pro Blocks Gradients - Dark Mode */
+  --gradient-primary: linear-gradient(135deg, var(--color-primary-500) 0%, var(--color-primary-700) 100%);
+  --gradient-secondary: linear-gradient(135deg, var(--color-neutral-800) 0%, var(--color-neutral-900) 100%);
+  --gradient-background: linear-gradient(135deg, var(--color-neutral-900) 0%, var(--color-neutral-800) 100%);
 
   /* shadcn UI Variables - Dark Mode */
   --background: var(--color-neutral-900);
