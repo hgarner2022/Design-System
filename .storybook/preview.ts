@@ -43,9 +43,39 @@ const preview: Preview = {
         },
         {
           name: 'dark',
-          value: '#0a0a0a',
+          value: '#1a1a1a',
+        },
+        {
+          name: 'gray',
+          value: '#f5f5f5',
         },
       ],
+    },
+
+    viewport: {
+      viewports: {
+        mobile: {
+          name: 'Mobile',
+          styles: {
+            width: '375px',
+            height: '667px',
+          },
+        },
+        tablet: {
+          name: 'Tablet',
+          styles: {
+            width: '768px',
+            height: '1024px',
+          },
+        },
+        desktop: {
+          name: 'Desktop',
+          styles: {
+            width: '1200px',
+            height: '800px',
+          },
+        },
+      },
     },
   },
 
@@ -55,7 +85,7 @@ const preview: Preview = {
       defaultValue: 'light',
       toolbar: {
         title: 'Theme',
-        icon: 'circlehollow',
+        icon: 'paintbrush',
         items: ['light', 'dark'],
         dynamicTitle: true,
       },
