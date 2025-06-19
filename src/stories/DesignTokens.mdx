@@ -217,35 +217,194 @@ Surface colors define the background and foreground colors for different context
 
 ## Typography
 
+Our typography system provides a comprehensive set of font families, sizes, weights, line heights, and letter spacing to ensure consistent and readable text across all components.
+
 ### Font Families
 
-```css
-/* Body Font */
-font-family: ${tokens.light.font.family.body.$value};
+We use a carefully selected set of font families optimized for different use cases:
 
-/* Heading Font */
-font-family: ${tokens.light.font.family.heading.$value};
+```css
+/* Sans-serif - Primary body text and UI elements */
+font-family: ${tokens.light.font.family.sans.$value};
+
+/* Serif - For headings and display text */
+font-family: ${tokens.light.font.family.serif.$value};
+
+/* Monospace - For code and technical content */
+font-family: ${tokens.light.font.family.mono.$value};
+
+/* Display - For large headings and hero text */
+font-family: ${tokens.light.font.family.display.$value};
 ```
 
+**Font Family Examples:**
+
+<div style={{ 
+  display: 'grid', 
+  gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
+  gap: '1rem', 
+  marginTop: '1rem' 
+}}>
+  <div style={{ 
+    padding: '1rem', 
+    borderRadius: '8px', 
+    border: `1px solid ${tokens.light.color.neutral['200'].$value}`,
+    backgroundColor: tokens.light.color.neutral['50'].$value
+  }}>
+    <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '0.875rem', color: tokens.light.color.neutral['600'].$value }}>Sans-serif (Inter)</h4>
+    <p style={{ 
+      margin: 0, 
+      fontSize: '1rem',
+      fontFamily: tokens.light.font.family.sans.$value,
+      lineHeight: '1.5'
+    }}>
+      The quick brown fox jumps over the lazy dog. Perfect for body text and UI elements.
+    </p>
+  </div>
+  
+  <div style={{ 
+    padding: '1rem', 
+    borderRadius: '8px', 
+    border: `1px solid ${tokens.light.color.neutral['200'].$value}`,
+    backgroundColor: tokens.light.color.neutral['50'].$value
+  }}>
+    <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '0.875rem', color: tokens.light.color.neutral['600'].$value }}>Serif (Georgia)</h4>
+    <p style={{ 
+      margin: 0, 
+      fontSize: '1rem',
+      fontFamily: tokens.light.font.family.serif.$value,
+      lineHeight: '1.5'
+    }}>
+      The quick brown fox jumps over the lazy dog. Ideal for headings and display text.
+    </p>
+  </div>
+  
+  <div style={{ 
+    padding: '1rem', 
+    borderRadius: '8px', 
+    border: `1px solid ${tokens.light.color.neutral['200'].$value}`,
+    backgroundColor: tokens.light.color.neutral['50'].$value
+  }}>
+    <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '0.875rem', color: tokens.light.color.neutral['600'].$value }}>Monospace (JetBrains Mono)</h4>
+    <p style={{ 
+      margin: 0, 
+      fontSize: '0.875rem',
+      fontFamily: tokens.light.font.family.mono.$value,
+      lineHeight: '1.5'
+    }}>
+      const message = "Hello, World!"; // Perfect for code
+    </p>
+  </div>
+</div>
+
 ### Font Sizes
+
+Our font size scale provides a comprehensive range from small captions to large display text:
 
 <Typeset 
   fontSizes={[
     tokens.light.font.size.xs.$value + 'px',
     tokens.light.font.size.sm.$value + 'px',
-    tokens.light.font.size.md.$value + 'px',
+    tokens.light.font.size.base.$value + 'px',
     tokens.light.font.size.lg.$value + 'px',
     tokens.light.font.size.xl.$value + 'px',
+    tokens.light.font.size['2xl'].$value + 'px',
+    tokens.light.font.size['3xl'].$value + 'px',
+    tokens.light.font.size['4xl'].$value + 'px',
   ]}
   sampleText="The quick brown fox jumps over the lazy dog"
-  fontFamily={tokens.light.font.family.body.$value}
+  fontFamily={tokens.light.font.family.sans.$value}
 />
+
+**Complete Font Size Scale:**
+
+| Size | Value | Usage |
+|------|-------|-------|
+| `xs` | ${tokens.light.font.size.xs.$value}px | Captions, labels |
+| `sm` | ${tokens.light.font.size.sm.$value}px | Small text, footnotes |
+| `base` | ${tokens.light.font.size.base.$value}px | Body text, paragraphs |
+| `lg` | ${tokens.light.font.size.lg.$value}px | Large body text |
+| `xl` | ${tokens.light.font.size.xl.$value}px | Subheadings |
+| `2xl` | ${tokens.light.font.size['2xl'].$value}px | Section headings |
+| `3xl` | ${tokens.light.font.size['3xl'].$value}px | Page headings |
+| `4xl` | ${tokens.light.font.size['4xl'].$value}px | Large headings |
+| `5xl` | ${tokens.light.font.size['5xl'].$value}px | Hero headings |
+| `6xl` | ${tokens.light.font.size['6xl'].$value}px | Display text |
+| `7xl` | ${tokens.light.font.size['7xl'].$value}px | Large display |
+| `8xl` | ${tokens.light.font.size['8xl'].$value}px | Extra large display |
+| `9xl` | ${tokens.light.font.size['9xl'].$value}px | Massive display |
 
 ### Font Weights
 
-- Regular: ${tokens.light.font.weight.regular.$value}
-- Medium: ${tokens.light.font.weight.medium.$value}
-- Bold: ${tokens.light.font.weight.bold.$value}
+Our font weight scale provides fine-grained control over text emphasis:
+
+<div style={{ 
+  display: 'grid', 
+  gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', 
+  gap: '1rem', 
+  marginTop: '1rem' 
+}}>
+  <div style={{ padding: '0.5rem', border: `1px solid ${tokens.light.color.neutral['200'].$value}`, borderRadius: '4px' }}>
+    <div style={{ fontSize: '0.75rem', color: tokens.light.color.neutral['600'].$value, marginBottom: '0.25rem' }}>Thin (100)</div>
+    <div style={{ fontWeight: 100, fontSize: '1rem' }}>The quick brown fox</div>
+  </div>
+  <div style={{ padding: '0.5rem', border: `1px solid ${tokens.light.color.neutral['200'].$value}`, borderRadius: '4px' }}>
+    <div style={{ fontSize: '0.75rem', color: tokens.light.color.neutral['600'].$value, marginBottom: '0.25rem' }}>Light (300)</div>
+    <div style={{ fontWeight: 300, fontSize: '1rem' }}>The quick brown fox</div>
+  </div>
+  <div style={{ padding: '0.5rem', border: `1px solid ${tokens.light.color.neutral['200'].$value}`, borderRadius: '4px' }}>
+    <div style={{ fontSize: '0.75rem', color: tokens.light.color.neutral['600'].$value, marginBottom: '0.25rem' }}>Normal (400)</div>
+    <div style={{ fontWeight: 400, fontSize: '1rem' }}>The quick brown fox</div>
+  </div>
+  <div style={{ padding: '0.5rem', border: `1px solid ${tokens.light.color.neutral['200'].$value}`, borderRadius: '4px' }}>
+    <div style={{ fontSize: '0.75rem', color: tokens.light.color.neutral['600'].$value, marginBottom: '0.25rem' }}>Medium (500)</div>
+    <div style={{ fontWeight: 500, fontSize: '1rem' }}>The quick brown fox</div>
+  </div>
+  <div style={{ padding: '0.5rem', border: `1px solid ${tokens.light.color.neutral['200'].$value}`, borderRadius: '4px' }}>
+    <div style={{ fontSize: '0.75rem', color: tokens.light.color.neutral['600'].$value, marginBottom: '0.25rem' }}>Semibold (600)</div>
+    <div style={{ fontWeight: 600, fontSize: '1rem' }}>The quick brown fox</div>
+  </div>
+  <div style={{ padding: '0.5rem', border: `1px solid ${tokens.light.color.neutral['200'].$value}`, borderRadius: '4px' }}>
+    <div style={{ fontSize: '0.75rem', color: tokens.light.color.neutral['600'].$value, marginBottom: '0.25rem' }}>Bold (700)</div>
+    <div style={{ fontWeight: 700, fontSize: '1rem' }}>The quick brown fox</div>
+  </div>
+  <div style={{ padding: '0.5rem', border: `1px solid ${tokens.light.color.neutral['200'].$value}`, borderRadius: '4px' }}>
+    <div style={{ fontSize: '0.75rem', color: tokens.light.color.neutral['600'].$value, marginBottom: '0.25rem' }}>Extrabold (800)</div>
+    <div style={{ fontWeight: 800, fontSize: '1rem' }}>The quick brown fox</div>
+  </div>
+  <div style={{ padding: '0.5rem', border: `1px solid ${tokens.light.color.neutral['200'].$value}`, borderRadius: '4px' }}>
+    <div style={{ fontSize: '0.75rem', color: tokens.light.color.neutral['600'].$value, marginBottom: '0.25rem' }}>Black (900)</div>
+    <div style={{ fontWeight: 900, fontSize: '1rem' }}>The quick brown fox</div>
+  </div>
+</div>
+
+### Line Heights
+
+Line height controls the vertical spacing between lines of text:
+
+```css
+/* Available line height values */
+line-height-none: ${tokens.light.font.lineHeight.none.$value}    /* 1 */
+line-height-tight: ${tokens.light.font.lineHeight.tight.$value}  /* 1.25 */
+line-height-snug: ${tokens.light.font.lineHeight.snug.$value}    /* 1.375 */
+line-height-normal: ${tokens.light.font.lineHeight.normal.$value} /* 1.5 */
+line-height-relaxed: ${tokens.light.font.lineHeight.relaxed.$value} /* 1.625 */
+line-height-loose: ${tokens.light.font.lineHeight.loose.$value}  /* 2 */
+```
+
+### Letter Spacing
+
+Letter spacing controls the horizontal spacing between characters:
+
+```css
+/* Available letter spacing values */
+letter-spacing-tighter: ${tokens.light.font.letterSpacing.tighter.$value}em /* -0.05em */
+letter-spacing-tight: ${tokens.light.font.letterSpacing.tight.$value}em     /* -0.025em */
+letter-spacing-normal: ${tokens.light.font.letterSpacing.normal.$value}em   /* 0em */
+letter-spacing-wide: ${tokens.light.font.letterSpacing.wide.$value}em       /* 0.025em */
+letter-spacing-wider: ${tokens.light.font.letterSpacing.wider.$value}em     /* 0.05em */
+letter-spacing-widest: ${tokens.light.font.letterSpacing.widest.$value}em   /* 0.1em */
+```
 
 ## Spacing
 
