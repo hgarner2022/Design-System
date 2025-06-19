@@ -12,7 +12,9 @@
     "predeploy-storybook": "npm run build-storybook",
     "deploy-storybook": "gh-pages -d storybook-static -b gh-pages",
     "build-theme": "node scripts/build-theme.js",
-    "update-registry": "npx tsx scripts/update-registry.ts"
+    "update-registry": "npx tsx scripts/update-registry.ts",
+    "test": "vitest",
+    "test:components": "vitest"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.1.1",
