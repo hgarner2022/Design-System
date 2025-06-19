@@ -83,10 +83,9 @@ export const theme = {
     'on-surface-inverse': tokens.light.color['on-surface-inverse'].$value,
   },
   fonts: {
-    sans: tokens.light.font.family.sans.$value,
-    serif: tokens.light.font.family.serif.$value,
+    body: tokens.light.font.family.body.$value,
+    heading: tokens.light.font.family.heading.$value,
     mono: tokens.light.font.family.mono.$value,
-    display: tokens.light.font.family.display.$value,
   },
   fontSizes: {
     xs: tokens.light.font.size.xs.$value + 'px',
