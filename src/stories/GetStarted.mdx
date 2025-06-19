@@ -1,0 +1,107 @@
+import { Meta } from '@storybook/blocks'
+
+<Meta title="Documentation/Getting Started" />
+
+# Getting Started
+
+Follow these steps to start using our design system in your project.
+
+## Installation
+
+1. Install the package using your preferred package manager:
+
+```bash
+# Using npm
+npm install @company/design-system
+
+# Using yarn
+yarn add @company/design-system
+
+# Using pnpm
+pnpm add @company/design-system
+```
+
+2. Install peer dependencies:
+
+```bash
+npm install @radix-ui/react-* tailwindcss
+```
+
+## Setup
+
+### 1. Configure Tailwind CSS
+
+Add our preset to your `tailwind.config.js`:
+
+```js
+module.exports = {
+  presets: [require('@company/design-system/tailwind')],
+  // Your custom config here
+}
+```
+
+### 2. Import Styles
+
+Add this import to your root layout or global CSS file:
+
+```css
+@import '@company/design-system/styles.css';
+```
+
+### 3. Setup Theme Provider
+
+Wrap your app with our theme provider:
+
+```tsx
+import { ThemeProvider } from '@company/design-system'
+
+function App({ children }) {
+  return (
+    <ThemeProvider>
+      {children}
+    </ThemeProvider>
+  )
+}
+```
+
+## Usage Example
+
+Here's a quick example using our components:
+
+```tsx
+import { Button, Input, ColorPicker } from '@company/design-system'
+
+function MyForm() {
+  return (
+    <div className="space-y-4">
+      <Input placeholder="Enter your name" />
+      <ColorPicker value="#4F46E5" onChange={setColor} />
+      <Button>Submit</Button>
+    </div>
+  )
+}
+```
+
+## Theme Customization
+
+You can customize the theme by providing a theme configuration:
+
+```tsx
+<ThemeProvider
+  theme={{
+    colors: {
+      primary: '#4F46E5',
+      secondary: '#EC4899',
+    },
+    // Other theme values
+  }}
+>
+  {children}
+</ThemeProvider>
+```
+
+## Next Steps
+
+- Check out our [Component Library](/docs/components)
+- Learn about our [Design Tokens](/docs/design-tokens)
+- Read the [Contributing Guide](/docs/contributing) if you want to help improve the system 

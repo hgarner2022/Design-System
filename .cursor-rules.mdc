@@ -1,0 +1,68 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Cursor Rules
+
+This file contains rules and guidelines for the Cursor workspace.
+
+## Components & Naming
+
+- Use functional React components for all UI elements, adding "use client" at the top when the component uses client-side interactivity.
+- Name components in PascalCase and place them under the src/components/ directory (e.g. src/components/ui/Button.tsx).
+- Keep components small and focused. Use TypeScript interfaces for props to ensure strong typing and self-documentation of component APIs.
+- Avoid introducing external UI libraries (Radix UI, shadcn UI components, etc.) for core components – build the design system components from scratch using Tailwind and tokens for full control.
+
+## Tailwind & Styling
+
+- Use Tailwind CSS v4 for all styling. Leverage utility classes for consistency and rapid UI development; do not use separate CSS/SCSS files for component styles.
+- The Tailwind theme is extended with our design tokens – use the configured brand color and font families from the theme rather than hard-coding values.
+- Use Tailwind's mobile-first and utility-first approach. Utilize responsive prefixes (sm:, md:, etc.) and dark mode classes (dark:) to ensure the design is adaptive.
+- Enable and use dark mode via the dark class strategy. All components should support dark theme styling by utilizing dark: utilities or CSS variables.
+- For animations and interactive effects, prefer Framer Motion over custom CSS animations or other libraries, to maintain consistency and utilize the included library.
+
+## TypeScript & Linting
+
+- Always use TypeScript strict mode. Avoid the any type; if a situation seems to require any, rethink the type or use generics/union types to precisely define it.
+- Do not use type casting with the as keyword or angle-bracket syntax. All forms of casting one type to another are forbidden – instead, refine types with type guards or adjust the types/interfaces to align with the data.
+- Do not use non-null assertions (the ! postfix) unless absolutely sure and there is no alternative; prefer safe checking and handling of null/undefined values.
+- Follow all linting rules and code style conventions. Treat TypeScript compiler warnings and ESLint errors as failures that must be resolved. The codebase should remain free of type errors and linter violations at all times.
+
+## GraphQL Practices
+
+- Organize GraphQL operations by co-locating queries and mutations in dedicated .gql.ts files near where they are used. Each such file should export exactly one GraphQL operation (one query or one mutation).
+- Do not use GraphQL fragments in this project. Each query or mutation should be written in full to maintain clarity and independence.
+- Ensure that GraphQL queries are typed: use generated TypeScript types or GraphQL codegen for operations so that components receive typed data.
+- Keep GraphQL concerns separated from UI components: data fetching logic (e.g. using a GraphQL client or hooks) should be in hooks or controller utilities, not intermingled deeply in the presentational component code.
+
+## State Management
+
+- Use Zustand for application state management (in the Next.js app pages or contexts), but avoid relying on global state within reusable UI components. UI components should be passed data via props or use their own internal state/hooks for local interactivity.
+- Do not use Zustand (or any global store) inside Storybook stories – stories should be self-contained and use mock data or local component state to simulate various scenarios. This ensures components remain pure and easily testable.
+
+## Testing
+
+- Use Vitest for unit and integration tests. Write tests alongside components (e.g. Button.test.tsx) to verify component logic, rendering, and edge cases.
+- Aim for comprehensive coverage on critical components (like form inputs, buttons with complex logic, etc.) and utility functions. Tests should run as part of the development workflow to catch regressions early.
+- Favor testing library utilities (if using @testing-library/react with Vitest) for rendering components and simulating user interactions to ensure the components behave as expected.
+- All tests should pass and coverage should remain high; fix any broken tests immediately when making changes to components.
+
+## Tools & Workflow
+
+- After making UI changes, use the screenshot tool to capture and show the updated component or page state. This helps in visually confirming changes and sharing context.
+- For complex tasks or features, first gather relevant context and files, and consider using the architect tool to generate a detailed implementation plan. Follow the generated plan step-by-step to ensure nothing is overlooked, while still adhering to the project's patterns and conventions.
+- Once a complex implementation is done, run the codeReview tool to create a diff of the changes and perform a thorough review. Address any issues or improvements identified before considering the task complete.
+- Use Storybook during development for UI components: it should be kept up-to-date with new components and states. This serves as living documentation for the design system and helps catch UI inconsistencies.
+
+## Project Automation
+
+- Whenever design token files in the tokens/ directory are modified, always run the theme build (npm run build-theme) to regenerate the CSS variables in the theme file. This keeps the styling in sync with design changes.
+- Whenever files in src/components/ are added, removed, or changed, run the registry update (npm run update-registry) to synchronize the component registry. This ensures ui.config.json (or the registry file) remains up-to-date with all available components.
+- The ui.config.json file is the source of truth for the design system setup – keep it updated as the project evolves (e.g. new components, path changes, or style configuration changes should be reflected there). This may also assist any integrated tools or plugins that rely on this config.
+
+## IMPORTANT
+
+- After completing each set of changes or finishing a story from the task list, always run npm run build (Next.js production build and type check) to catch any errors. Fix all build errors (and warnings whenever possible) before committing.
+- Update the .cursor-updates file with a one-line summary of the changes made after each story or significant change. Maintain clear documentation of progress for reviewers.
+- Commit changes with clear and descriptive commit messages. Use conventional commits style if possible (e.g. feat: add Button component with primary/secondary variants). Do not push directly to the main branch without review – the commit history should reflect incremental progress on the stories.

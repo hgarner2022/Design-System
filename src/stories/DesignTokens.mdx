@@ -1,0 +1,550 @@
+import { Meta, ColorPalette, ColorItem, Title, Subtitle, Typeset } from '@storybook/blocks'
+import tokens from '../../tokens/tokens.json'
+
+<Meta title="Documentation/Design Tokens" />
+
+# Design Tokens
+
+Our design tokens are the building blocks of our design system. They help maintain consistency across our products while making it easier to update global styles.
+
+## Colors
+
+### Primary Colors
+
+<ColorPalette>
+  <ColorItem 
+    title="Primary" 
+    subtitle="Brand primary color palette"
+    colors={{ 
+      50: tokens.light.color.primary['50'].$value,
+      100: tokens.light.color.primary['100'].$value,
+      200: tokens.light.color.primary['200'].$value,
+      300: tokens.light.color.primary['300'].$value,
+      400: tokens.light.color.primary['400'].$value,
+      500: tokens.light.color.primary['500'].$value,
+      600: tokens.light.color.primary['600'].$value,
+      700: tokens.light.color.primary['700'].$value,
+      800: tokens.light.color.primary['800'].$value,
+      900: tokens.light.color.primary['900'].$value,
+    }} 
+  />
+</ColorPalette>
+
+### Neutral Colors
+
+<ColorPalette>
+  <ColorItem 
+    title="Neutral" 
+    subtitle="For text, borders, and backgrounds"
+    colors={{ 
+      0: tokens.light.color.neutral['0'].$value,
+      50: tokens.light.color.neutral['50'].$value,
+      100: tokens.light.color.neutral['100'].$value,
+      200: tokens.light.color.neutral['200'].$value,
+      300: tokens.light.color.neutral['300'].$value,
+      400: tokens.light.color.neutral['400'].$value,
+      500: tokens.light.color.neutral['500'].$value,
+      600: tokens.light.color.neutral['600'].$value,
+      700: tokens.light.color.neutral['700'].$value,
+      800: tokens.light.color.neutral['800'].$value,
+      900: tokens.light.color.neutral['900'].$value,
+    }} 
+  />
+</ColorPalette>
+
+### Semantic Colors
+
+<ColorPalette>
+  <ColorItem 
+    title="Success" 
+    subtitle="For positive actions and states"
+    colors={{ 
+      50: tokens.light.color.success['50'].$value,
+      100: tokens.light.color.success['100'].$value,
+      200: tokens.light.color.success['200'].$value,
+      300: tokens.light.color.success['300'].$value,
+      400: tokens.light.color.success['400'].$value,
+      500: tokens.light.color.success['500'].$value,
+      600: tokens.light.color.success['600'].$value,
+      700: tokens.light.color.success['700'].$value,
+      800: tokens.light.color.success['800'].$value,
+      900: tokens.light.color.success['900'].$value,
+    }} 
+  />
+  <ColorItem 
+    title="Warning" 
+    subtitle="For cautionary messages"
+    colors={{ 
+      50: tokens.light.color.warning['50'].$value,
+      100: tokens.light.color.warning['100'].$value,
+      200: tokens.light.color.warning['200'].$value,
+      300: tokens.light.color.warning['300'].$value,
+      400: tokens.light.color.warning['400'].$value,
+      500: tokens.light.color.warning['500'].$value,
+      600: tokens.light.color.warning['600'].$value,
+      700: tokens.light.color.warning['700'].$value,
+      800: tokens.light.color.warning['800'].$value,
+      900: tokens.light.color.warning['900'].$value,
+    }} 
+  />
+  <ColorItem 
+    title="Error" 
+    subtitle="For error states"
+    colors={{ 
+      50: tokens.light.color.error['50'].$value,
+      100: tokens.light.color.error['100'].$value,
+      200: tokens.light.color.error['200'].$value,
+      300: tokens.light.color.error['300'].$value,
+      400: tokens.light.color.error['400'].$value,
+      500: tokens.light.color.error['500'].$value,
+      600: tokens.light.color.error['600'].$value,
+      700: tokens.light.color.error['700'].$value,
+      800: tokens.light.color.error['800'].$value,
+      900: tokens.light.color.error['900'].$value,
+    }} 
+  />
+  <ColorItem 
+    title="Info" 
+    subtitle="For informational content"
+    colors={{ 
+      50: tokens.light.color.info['50'].$value,
+      100: tokens.light.color.info['100'].$value,
+      200: tokens.light.color.info['200'].$value,
+      300: tokens.light.color.info['300'].$value,
+      400: tokens.light.color.info['400'].$value,
+      500: tokens.light.color.info['500'].$value,
+      600: tokens.light.color.info['600'].$value,
+      700: tokens.light.color.info['700'].$value,
+      800: tokens.light.color.info['800'].$value,
+      900: tokens.light.color.info['900'].$value,
+    }} 
+  />
+</ColorPalette>
+
+### Brand & Surface Colors
+
+<ColorPalette>
+  <ColorItem 
+    title="Brand" 
+    subtitle="Primary brand color"
+    colors={{ 
+      brand: tokens.light.color.primary['500'].$value,
+      'brand-hover': tokens.light.color.primary['600'].$value,
+    }} 
+  />
+  <ColorItem 
+    title="Surface" 
+    subtitle="Background and surface colors"
+    colors={{ 
+      surface: tokens.light.color.neutral['0'].$value,
+      'surface-inverse': tokens.light.color.neutral['900'].$value,
+      'on-surface': tokens.light.color.neutral['900'].$value,
+      'on-surface-inverse': tokens.light.color.neutral['0'].$value,
+    }} 
+  />
+</ColorPalette>
+
+#### Surface Color Usage
+
+Surface colors define the background and foreground colors for different contexts in our interface. They ensure proper contrast and accessibility across all components.
+
+**Surface Colors:**
+- **`surface`** - Primary background color for cards, panels, and main content areas
+- **`surface-inverse`** - Dark background for inverted contexts (like dark mode or highlighted sections)
+- **`on-surface`** - Text color that appears on light surfaces
+- **`on-surface-inverse`** - Text color that appears on dark surfaces
+
+**Usage Examples:**
+
+```css
+/* Card background */
+.card {
+  background-color: var(--surface);
+  color: var(--on-surface);
+}
+
+/* Dark mode or highlighted section */
+.highlighted {
+  background-color: var(--surface-inverse);
+  color: var(--on-surface-inverse);
+}
+
+/* Modal overlay */
+.modal-backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Tooltip */
+.tooltip {
+  background-color: var(--surface-inverse);
+  color: var(--on-surface-inverse);
+}
+```
+
+**Visual Examples:**
+
+<div style={{ 
+  display: 'grid', 
+  gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', 
+  gap: '1rem', 
+  marginTop: '1rem' 
+}}>
+  <div style={{ 
+    padding: '1rem', 
+    borderRadius: '8px', 
+    backgroundColor: tokens.light.color.neutral['0'].$value,
+    color: tokens.light.color.neutral['900'].$value,
+    border: `1px solid ${tokens.light.color.neutral['200'].$value}`
+  }}>
+    <h4 style={{ margin: '0 0 0.5rem 0' }}>Surface (Light)</h4>
+    <p style={{ margin: 0, fontSize: '0.875rem' }}>
+      This is how content appears on a light surface with dark text.
+    </p>
+  </div>
+  
+  <div style={{ 
+    padding: '1rem', 
+    borderRadius: '8px', 
+    backgroundColor: tokens.light.color.neutral['900'].$value,
+    color: tokens.light.color.neutral['0'].$value
+  }}>
+    <h4 style={{ margin: '0 0 0.5rem 0' }}>Surface Inverse (Dark)</h4>
+    <p style={{ margin: 0, fontSize: '0.875rem' }}>
+      This is how content appears on a dark surface with light text.
+    </p>
+  </div>
+</div>
+
+## Typography
+
+Our typography system provides a comprehensive set of font families, sizes, weights, line heights, and letter spacing to ensure consistent and readable text across all components.
+
+### Font Families
+
+We use a carefully selected set of font families optimized for different use cases:
+
+```css
+/* Body Font - Plus Jakarta Sans */
+font-family: ${tokens.light.font.family.body.$value};
+
+/* Heading Font - Petrona */
+font-family: ${tokens.light.font.family.heading.$value};
+
+/* Monospace - For code and technical content */
+font-family: ${tokens.light.font.family.mono.$value};
+```
+
+**Font Family Examples:**
+
+<div style={{ 
+  display: 'grid', 
+  gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
+  gap: '1rem', 
+  marginTop: '1rem' 
+}}>
+  <div style={{ 
+    padding: '1rem', 
+    borderRadius: '8px', 
+    border: `1px solid ${tokens.light.color.neutral['200'].$value}`,
+    backgroundColor: tokens.light.color.neutral['50'].$value
+  }}>
+    <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '0.875rem', color: tokens.light.color.neutral['600'].$value }}>Body (Plus Jakarta Sans)</h4>
+    <p style={{ 
+      margin: 0, 
+      fontSize: '1rem',
+      fontFamily: tokens.light.font.family.body.$value,
+      lineHeight: '1.5'
+    }}>
+      The quick brown fox jumps over the lazy dog. Perfect for body text and UI elements.
+    </p>
+  </div>
+  
+  <div style={{ 
+    padding: '1rem', 
+    borderRadius: '8px', 
+    border: `1px solid ${tokens.light.color.neutral['200'].$value}`,
+    backgroundColor: tokens.light.color.neutral['50'].$value
+  }}>
+    <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '0.875rem', color: tokens.light.color.neutral['600'].$value }}>Heading (Petrona)</h4>
+    <p style={{ 
+      margin: 0, 
+      fontSize: '1.25rem',
+      fontFamily: tokens.light.font.family.heading.$value,
+      lineHeight: '1.3',
+      fontWeight: '600'
+    }}>
+      The quick brown fox jumps over the lazy dog. Ideal for headings and display text.
+    </p>
+  </div>
+  
+  <div style={{ 
+    padding: '1rem', 
+    borderRadius: '8px', 
+    border: `1px solid ${tokens.light.color.neutral['200'].$value}`,
+    backgroundColor: tokens.light.color.neutral['50'].$value
+  }}>
+    <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '0.875rem', color: tokens.light.color.neutral['600'].$value }}>Monospace (JetBrains Mono)</h4>
+    <p style={{ 
+      margin: 0, 
+      fontSize: '0.875rem',
+      fontFamily: tokens.light.font.family.mono.$value,
+      lineHeight: '1.5'
+    }}>
+      const message = "Hello, World!"; // Perfect for code
+    </p>
+  </div>
+</div>
+
+### Font Sizes
+
+Our font size scale provides a comprehensive range from small captions to large display text:
+
+<Typeset 
+  fontSizes={[
+    tokens.light.font.size.xs.$value + 'px',
+    tokens.light.font.size.sm.$value + 'px',
+    tokens.light.font.size.base.$value + 'px',
+    tokens.light.font.size.lg.$value + 'px',
+    tokens.light.font.size.xl.$value + 'px',
+    tokens.light.font.size['2xl'].$value + 'px',
+    tokens.light.font.size['3xl'].$value + 'px',
+    tokens.light.font.size['4xl'].$value + 'px',
+  ]}
+  sampleText="The quick brown fox jumps over the lazy dog"
+  fontFamily={tokens.light.font.family.body.$value}
+/>
+
+**Complete Font Size Scale:**
+
+| Size | Value | Usage |
+|------|-------|-------|
+| `xs` | ${tokens.light.font.size.xs.$value}px | Captions, labels |
+| `sm` | ${tokens.light.font.size.sm.$value}px | Small text, footnotes |
+| `base` | ${tokens.light.font.size.base.$value}px | Body text, paragraphs |
+| `lg` | ${tokens.light.font.size.lg.$value}px | Large body text |
+| `xl` | ${tokens.light.font.size.xl.$value}px | Subheadings |
+| `2xl` | ${tokens.light.font.size['2xl'].$value}px | Section headings |
+| `3xl` | ${tokens.light.font.size['3xl'].$value}px | Page headings |
+| `4xl` | ${tokens.light.font.size['4xl'].$value}px | Large headings |
+| `5xl` | ${tokens.light.font.size['5xl'].$value}px | Hero headings |
+| `6xl` | ${tokens.light.font.size['6xl'].$value}px | Display text |
+| `7xl` | ${tokens.light.font.size['7xl'].$value}px | Large display |
+| `8xl` | ${tokens.light.font.size['8xl'].$value}px | Extra large display |
+| `9xl` | ${tokens.light.font.size['9xl'].$value}px | Massive display |
+
+### Font Weights
+
+Our font weight scale provides fine-grained control over text emphasis:
+
+<div style={{ 
+  display: 'grid', 
+  gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', 
+  gap: '1rem', 
+  marginTop: '1rem' 
+}}>
+  <div style={{ padding: '0.5rem', border: `1px solid ${tokens.light.color.neutral['200'].$value}`, borderRadius: '4px' }}>
+    <div style={{ fontSize: '0.75rem', color: tokens.light.color.neutral['600'].$value, marginBottom: '0.25rem' }}>Thin (100)</div>
+    <div style={{ fontWeight: 100, fontSize: '1rem' }}>The quick brown fox</div>
+  </div>
+  <div style={{ padding: '0.5rem', border: `1px solid ${tokens.light.color.neutral['200'].$value}`, borderRadius: '4px' }}>
+    <div style={{ fontSize: '0.75rem', color: tokens.light.color.neutral['600'].$value, marginBottom: '0.25rem' }}>Light (300)</div>
+    <div style={{ fontWeight: 300, fontSize: '1rem' }}>The quick brown fox</div>
+  </div>
+  <div style={{ padding: '0.5rem', border: `1px solid ${tokens.light.color.neutral['200'].$value}`, borderRadius: '4px' }}>
+    <div style={{ fontSize: '0.75rem', color: tokens.light.color.neutral['600'].$value, marginBottom: '0.25rem' }}>Normal (400)</div>
+    <div style={{ fontWeight: 400, fontSize: '1rem' }}>The quick brown fox</div>
+  </div>
+  <div style={{ padding: '0.5rem', border: `1px solid ${tokens.light.color.neutral['200'].$value}`, borderRadius: '4px' }}>
+    <div style={{ fontSize: '0.75rem', color: tokens.light.color.neutral['600'].$value, marginBottom: '0.25rem' }}>Medium (500)</div>
+    <div style={{ fontWeight: 500, fontSize: '1rem' }}>The quick brown fox</div>
+  </div>
+  <div style={{ padding: '0.5rem', border: `1px solid ${tokens.light.color.neutral['200'].$value}`, borderRadius: '4px' }}>
+    <div style={{ fontSize: '0.75rem', color: tokens.light.color.neutral['600'].$value, marginBottom: '0.25rem' }}>Semibold (600)</div>
+    <div style={{ fontWeight: 600, fontSize: '1rem' }}>The quick brown fox</div>
+  </div>
+  <div style={{ padding: '0.5rem', border: `1px solid ${tokens.light.color.neutral['200'].$value}`, borderRadius: '4px' }}>
+    <div style={{ fontSize: '0.75rem', color: tokens.light.color.neutral['600'].$value, marginBottom: '0.25rem' }}>Bold (700)</div>
+    <div style={{ fontWeight: 700, fontSize: '1rem' }}>The quick brown fox</div>
+  </div>
+  <div style={{ padding: '0.5rem', border: `1px solid ${tokens.light.color.neutral['200'].$value}`, borderRadius: '4px' }}>
+    <div style={{ fontSize: '0.75rem', color: tokens.light.color.neutral['600'].$value, marginBottom: '0.25rem' }}>Extrabold (800)</div>
+    <div style={{ fontWeight: 800, fontSize: '1rem' }}>The quick brown fox</div>
+  </div>
+  <div style={{ padding: '0.5rem', border: `1px solid ${tokens.light.color.neutral['200'].$value}`, borderRadius: '4px' }}>
+    <div style={{ fontSize: '0.75rem', color: tokens.light.color.neutral['600'].$value, marginBottom: '0.25rem' }}>Black (900)</div>
+    <div style={{ fontWeight: 900, fontSize: '1rem' }}>The quick brown fox</div>
+  </div>
+</div>
+
+### Line Heights
+
+Line height controls the vertical spacing between lines of text:
+
+```css
+/* Available line height values */
+line-height-none: ${tokens.light.font.lineHeight.none.$value}    /* 1 */
+line-height-tight: ${tokens.light.font.lineHeight.tight.$value}  /* 1.25 */
+line-height-snug: ${tokens.light.font.lineHeight.snug.$value}    /* 1.375 */
+line-height-normal: ${tokens.light.font.lineHeight.normal.$value} /* 1.5 */
+line-height-relaxed: ${tokens.light.font.lineHeight.relaxed.$value} /* 1.625 */
+line-height-loose: ${tokens.light.font.lineHeight.loose.$value}  /* 2 */
+```
+
+### Letter Spacing
+
+Letter spacing controls the horizontal spacing between characters:
+
+```css
+/* Available letter spacing values */
+letter-spacing-tighter: ${tokens.light.font.letterSpacing.tighter.$value}em /* -0.05em */
+letter-spacing-tight: ${tokens.light.font.letterSpacing.tight.$value}em     /* -0.025em */
+letter-spacing-normal: ${tokens.light.font.letterSpacing.normal.$value}em   /* 0em */
+letter-spacing-wide: ${tokens.light.font.letterSpacing.wide.$value}em       /* 0.025em */
+letter-spacing-wider: ${tokens.light.font.letterSpacing.wider.$value}em     /* 0.05em */
+letter-spacing-widest: ${tokens.light.font.letterSpacing.widest.$value}em   /* 0.1em */
+```
+
+## Spacing
+
+Our spacing scale is based on a 4px grid system:
+
+```css
+/* Available spacing values */
+space-0: ${tokens.light.space['0'].$value}px    /* 0px */
+space-1: ${tokens.light.space['1'].$value}px    /* 4px */
+space-2: ${tokens.light.space['2'].$value}px    /* 8px */
+space-3: ${tokens.light.space['3'].$value}px    /* 12px */
+space-4: ${tokens.light.space['4'].$value}px    /* 16px */
+space-5: ${tokens.light.space['5'].$value}px    /* 20px */
+```
+
+## Border Radius
+
+```css
+/* Available border radius values */
+radius-sm: ${tokens.light.radius.sm.$value}px   /* 4px */
+radius-md: ${tokens.light.radius.md.$value}px   /* 8px */
+radius-lg: ${tokens.light.radius.lg.$value}px   /* 12px */
+```
+
+## Dark Mode
+
+Our design system supports dark mode with specific color adjustments:
+
+### Dark Mode Semantic Colors
+
+<ColorPalette>
+  <ColorItem 
+    title="Success (Dark)" 
+    subtitle="Success colors for dark theme"
+    colors={{ 
+      500: tokens.dark.color.success['500'].$value,
+      600: tokens.dark.color.success['600'].$value,
+      700: tokens.dark.color.success['700'].$value,
+    }} 
+  />
+  <ColorItem 
+    title="Warning (Dark)" 
+    subtitle="Warning colors for dark theme"
+    colors={{ 
+      500: tokens.dark.color.warning['500'].$value,
+      600: tokens.dark.color.warning['600'].$value,
+      700: tokens.dark.color.warning['700'].$value,
+    }} 
+  />
+  <ColorItem 
+    title="Error (Dark)" 
+    subtitle="Error colors for dark theme"
+    colors={{ 
+      500: tokens.dark.color.error['500'].$value,
+      600: tokens.dark.color.error['600'].$value,
+      700: tokens.dark.color.error['700'].$value,
+    }} 
+  />
+  <ColorItem 
+    title="Info (Dark)" 
+    subtitle="Info colors for dark theme"
+    colors={{ 
+      500: tokens.dark.color.info['500'].$value,
+      600: tokens.dark.color.info['600'].$value,
+      700: tokens.dark.color.info['700'].$value,
+    }} 
+  />
+</ColorPalette>
+
+```css
+/* Dark mode brand colors */
+--color-brand: ${tokens.dark.color.brand.$value};
+--color-brand-hover: ${tokens.dark.color['brand-hover'].$value};
+
+/* Dark mode surface colors */
+--color-surface: ${tokens.dark.color.surface.$value};
+--color-surface-inverse: ${tokens.dark.color['surface-inverse'].$value};
+--color-on-surface: ${tokens.dark.color['on-surface'].$value};
+--color-on-surface-inverse: ${tokens.dark.color['on-surface-inverse'].$value};
+```
+
+## Usage
+
+You can use these tokens in your CSS through our custom properties:
+
+```css
+.my-component {
+  color: var(--color-primary-500);
+  font-size: var(--font-size-md);
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+}
+
+/* Semantic color usage */
+.success-message {
+  color: var(--color-success-500);
+  background-color: var(--color-success-50);
+}
+
+.warning-alert {
+  color: var(--color-warning-500);
+  background-color: var(--color-warning-50);
+}
+
+.error-state {
+  color: var(--color-error-500);
+  background-color: var(--color-error-50);
+}
+
+.info-notice {
+  color: var(--color-info-500);
+  background-color: var(--color-info-50);
+}
+```
+
+Or in your components using our theme utilities:
+
+```tsx
+import { theme } from '@company/design-system'
+
+function MyComponent() {
+  return (
+    <div
+      style={{
+        color: theme.colors.primary[500],
+        fontSize: theme.fontSizes.md + 'px',
+        padding: theme.spacing[4] + 'px',
+        borderRadius: theme.radius.md + 'px',
+      }}
+    >
+      Content
+    </div>
+  )
+}
+```
+
+## Token Structure
+
+Our tokens follow the [Design Tokens Format](https://design-tokens.github.io/) specification:
+
+- **$type**: Defines the token type (color, dimension, fontFamily, etc.)
+- **$value**: Contains the actual value
+- **Nested structure**: Tokens are organized by category and subcategory
+- **Theme support**: Separate light and dark theme tokens 

@@ -1,0 +1,128 @@
+import { Meta } from '@storybook/blocks'
+
+<Meta title="Documentation/Contributing" />
+
+# Contributing Guide
+
+Thank you for your interest in contributing to our design system! This guide will help you get started.
+
+## Development Setup
+
+1. Clone the repository:
+```bash
+git clone https://github.com/company/design-system.git
+cd design-system
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Start Storybook:
+```bash
+npm run storybook
+```
+
+4. Start the development server:
+```bash
+npm run dev
+```
+
+## Project Structure
+
+```
+design-system/
+├── src/
+│   ├── components/     # React components
+│   │   ├── ui/        # Atomic components
+│   │   └── blocks/    # Complex components
+│   ├── styles/        # Global styles
+│   ├── lib/           # Utilities
+│   └── stories/       # Documentation
+├── tokens/            # Design tokens
+└── scripts/          # Build scripts
+```
+
+## Component Guidelines
+
+When creating or modifying components:
+
+1. **Accessibility First**
+   - Use semantic HTML elements
+   - Include ARIA attributes when needed
+   - Ensure keyboard navigation works
+   - Test with screen readers
+
+2. **TypeScript**
+   - Write proper type definitions
+   - Export component props interface
+   - Use generics when appropriate
+
+3. **Testing**
+   - Write unit tests for logic
+   - Add Storybook stories
+   - Include accessibility tests
+
+4. **Documentation**
+   - Add JSDoc comments
+   - Create usage examples
+   - Document props and variants
+
+## Pull Request Process
+
+1. **Branch Naming**
+   - Feature: `feature/component-name`
+   - Fix: `fix/issue-description`
+   - Docs: `docs/topic-name`
+
+2. **Commit Messages**
+   Follow conventional commits:
+   ```
+   feat(button): add loading state
+   fix(input): resolve focus outline issue
+   docs(readme): update installation steps
+   ```
+
+3. **PR Description**
+   - Describe the changes
+   - Link related issues
+   - Add screenshots/videos for UI changes
+   - List breaking changes
+
+4. **Checklist**
+   - [ ] Component follows guidelines
+   - [ ] Tests are passing
+   - [ ] Documentation is updated
+   - [ ] Storybook stories added/updated
+   - [ ] Accessibility checked
+   - [ ] Bundle size impact reviewed
+
+## Review Process
+
+1. **Code Review**
+   - Two approvals required
+   - Address all comments
+   - Keep discussions in PR thread
+
+2. **QA Review**
+   - Test in supported browsers
+   - Check responsive behavior
+   - Verify accessibility
+   - Test with theme variations
+
+3. **Documentation Review**
+   - Check technical accuracy
+   - Verify examples work
+   - Ensure clarity and completeness
+
+## Need Help?
+
+- Join our Slack channel: #design-system
+- Check existing issues and PRs
+- Tag maintainers in comments
+- Attend our weekly office hours
+
+## Code of Conduct
+
+Please read our [Code of Conduct](CODE_OF_CONDUCT.md) before contributing. We expect all contributors to follow these guidelines to maintain a welcoming and inclusive community. 
