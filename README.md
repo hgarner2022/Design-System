@@ -1,4 +1,15 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Design System
+
+A comprehensive design system built with React, TypeScript, and Tailwind CSS. This project provides reusable components, design tokens, and documentation for building consistent user interfaces.
+
+## Features
+
+- 🎨 **Design Tokens**: Consistent colors, typography, spacing, and more
+- 🧩 **Component Library**: Reusable React components with TypeScript
+- 📚 **Storybook Documentation**: Interactive component documentation
+- 🎯 **Accessibility First**: All components built with accessibility in mind
+- 🌙 **Dark Mode Support**: Built-in theme switching capabilities
+- 📱 **Responsive Design**: Mobile-first responsive components
 
 ## Getting Started
 
@@ -16,21 +27,48 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Storybook
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To view the component documentation and design tokens:
 
-## Learn More
+```bash
+npm run storybook
+```
 
-To learn more about Next.js, take a look at the following resources:
+Open [http://localhost:6006](http://localhost:6006) to explore the design system.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Live Storybook
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+View the live documentation at: https://hgarner2022.github.io/Design-System/
 
-## Deploy on Vercel
+## Project Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+design-system/
+├── src/
+│   ├── components/     # React components
+│   │   ├── ui/        # Atomic components
+│   │   └── blocks/    # Complex components
+│   ├── styles/        # Global styles
+│   ├── lib/           # Utilities
+│   └── stories/       # Documentation
+├── tokens/            # Design tokens
+└── scripts/          # Build scripts
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Tech Stack
+
+- **Framework**: Next.js 15 with App Router
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Components**: Radix UI primitives
+- **Documentation**: Storybook 9
+- **Testing**: Vitest
+
+## Contributing
+
+Please read our [Contributing Guide](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
