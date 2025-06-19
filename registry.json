@@ -1,0 +1,177 @@
+{
+  "version": "1.0.0",
+  "components": {
+    "base": {
+      "button": {
+        "path": "src/components/ui/button.tsx",
+        "type": "base"
+      },
+      "input": {
+        "path": "src/components/ui/input.tsx",
+        "type": "base"
+      },
+      "card": {
+        "path": "src/components/ui/card.tsx",
+        "type": "base"
+      },
+      "form": {
+        "path": "src/components/ui/form.tsx",
+        "type": "base"
+      },
+      "label": {
+        "path": "src/components/ui/label.tsx",
+        "type": "base"
+      },
+      "select": {
+        "path": "src/components/ui/select.tsx",
+        "type": "base"
+      },
+      "textarea": {
+        "path": "src/components/ui/textarea.tsx",
+        "type": "base"
+      },
+      "sonner": {
+        "path": "src/components/ui/sonner.tsx",
+        "type": "base"
+      },
+      "dialog": {
+        "path": "src/components/ui/dialog.tsx",
+        "type": "base"
+      },
+      "popover": {
+        "path": "src/components/ui/popover.tsx",
+        "type": "base"
+      },
+      "dropdown-menu": {
+        "path": "src/components/ui/dropdown-menu.tsx",
+        "type": "base"
+      },
+      "sheet": {
+        "path": "src/components/ui/sheet.tsx",
+        "type": "base"
+      },
+      "tabs": {
+        "path": "src/components/ui/tabs.tsx",
+        "type": "base"
+      },
+      "accordion": {
+        "path": "src/components/ui/accordion.tsx",
+        "type": "base"
+      },
+      "hover-card": {
+        "path": "src/components/ui/hover-card.tsx",
+        "type": "base"
+      },
+      "progress": {
+        "path": "src/components/ui/progress.tsx",
+        "type": "base"
+      },
+      "radio-group": {
+        "path": "src/components/ui/radio-group.tsx",
+        "type": "base"
+      },
+      "switch": {
+        "path": "src/components/ui/switch.tsx",
+        "type": "base"
+      },
+      "checkbox": {
+        "path": "src/components/ui/checkbox.tsx",
+        "type": "base"
+      },
+      "avatar": {
+        "path": "src/components/ui/avatar.tsx",
+        "type": "base"
+      },
+      "badge": {
+        "path": "src/components/ui/badge.tsx",
+        "type": "base"
+      },
+      "skeleton": {
+        "path": "src/components/ui/skeleton.tsx",
+        "type": "base"
+      },
+      "table": {
+        "path": "src/components/ui/table.tsx",
+        "type": "base"
+      },
+      "calendar": {
+        "path": "src/components/ui/calendar.tsx",
+        "type": "base"
+      },
+      "command": {
+        "path": "src/components/ui/command.tsx",
+        "type": "base"
+      },
+      "separator": {
+        "path": "src/components/ui/separator.tsx",
+        "type": "base"
+      },
+      "slider": {
+        "path": "src/components/ui/slider.tsx",
+        "type": "base"
+      },
+      "toggle": {
+        "path": "src/components/ui/toggle.tsx",
+        "type": "base"
+      },
+      "alert": {
+        "path": "src/components/ui/alert.tsx",
+        "type": "base"
+      },
+      "carousel": {
+        "path": "src/components/ui/carousel.tsx",
+        "type": "base"
+      },
+      "drawer": {
+        "path": "src/components/ui/drawer.tsx",
+        "type": "base"
+      },
+      "menubar": {
+        "path": "src/components/ui/menubar.tsx",
+        "type": "base"
+      },
+      "navigation-menu": {
+        "path": "src/components/ui/navigation-menu.tsx",
+        "type": "base"
+      },
+      "pagination": {
+        "path": "src/components/ui/pagination.tsx",
+        "type": "base"
+      },
+      "scroll-area": {
+        "path": "src/components/ui/scroll-area.tsx",
+        "type": "base"
+      },
+      "resizable": {
+        "path": "src/components/ui/resizable.tsx",
+        "type": "base"
+      }
+    },
+    "pro-blocks": {
+      "app-shell": {
+        "path": "src/components/pro-blocks/application/AppShell.tsx",
+        "type": "pro-block",
+        "category": "application",
+        "subComponents": [
+          "AppShellHeader",
+          "AppShellNavLink"
+        ]
+      },
+      "hero": {
+        "path": "src/components/pro-blocks/landing/Hero.tsx",
+        "type": "pro-block",
+        "category": "landing"
+      },
+      "features": {
+        "path": "src/components/pro-blocks/landing/Features.tsx",
+        "type": "pro-block",
+        "category": "landing"
+      },
+      "landing-page": {
+        "path": "src/components/pro-blocks/landing/LandingPage.tsx",
+        "type": "pro-block",
+        "category": "landing"
+      }
+    }
+  }
+} 
