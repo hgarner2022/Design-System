@@ -45,19 +45,13 @@ export function Hero({
   className,
   ...props
 }: HeroProps) {
-  const backgroundClasses = {
-    gradient: `bg-gradient-to-br from-${gradient}-400 to-${gradient}-600`,
-    solid: "bg-background",
-    image: "bg-cover bg-center bg-no-repeat",
-  }
-
-  const gradientMap = {
-    primary: "from-primary-400 to-primary-600",
-    secondary: "from-neutral-100 to-neutral-200",
-    success: "from-green-400 to-green-600",
-    danger: "from-red-400 to-red-600",
-    warning: "from-yellow-400 to-yellow-600",
-    info: "from-blue-400 to-blue-600",
+  const gradientStyles = {
+    primary: { background: "var(--gradient-primary)" },
+    secondary: { background: "var(--gradient-secondary)" },
+    success: { background: "var(--gradient-success)" },
+    danger: { background: "var(--gradient-danger)" },
+    warning: { background: "var(--gradient-warning)" },
+    info: { background: "var(--gradient-info)" },
   }
 
   const handlePrimaryClick = () => {
@@ -80,12 +74,14 @@ export function Hero({
     <section
       className={cn(
         "relative min-h-[600px] flex items-center justify-center overflow-hidden",
-        background === "gradient" && `bg-gradient-to-br ${gradientMap[gradient]}`,
+        background === "gradient" && "bg-gradient-to-br",
         background === "image" && image && "bg-cover bg-center bg-no-repeat",
         className
       )}
       style={
-        background === "image" && image
+        background === "gradient"
+          ? gradientStyles[gradient]
+          : background === "image" && image
           ? { backgroundImage: `url(${image})` }
           : undefined
       }
